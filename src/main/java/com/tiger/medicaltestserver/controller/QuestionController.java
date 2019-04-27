@@ -26,4 +26,9 @@ public class QuestionController {
     public ResponseEntity addQuestion(@RequestBody Question question){
         return new ResponseEntity(questionService.addQuestion(question), HttpStatus.OK);
     }
+
+    @GetMapping(value = "/get")
+    public ResponseEntity getAllQuestions(@RequestParam Integer length){
+        return new ResponseEntity(questionService.getAllQuestions(length), HttpStatus.OK);
+    }
 }
