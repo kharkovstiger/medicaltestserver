@@ -28,7 +28,7 @@ public class QuestionController {
     }
 
     @GetMapping(value = "/get")
-    public ResponseEntity getAllQuestions(@RequestParam Integer length){
+    public ResponseEntity getAllQuestions(@RequestParam(required = false) Integer length){
         return new ResponseEntity(questionService.getAllQuestions(length), HttpStatus.OK);
     }
 }

@@ -27,6 +27,6 @@ public class DefaultQuestionService implements QuestionService {
     public List<Question> getAllQuestions(Integer length) {
         List<Question> questions = questionRepository.findAll();
         Collections.shuffle(questions);
-        return length == null ? questions : questions.subList(0, length-1);
+        return length == null ? questions : questions.subList(0, length);
     }
 }
